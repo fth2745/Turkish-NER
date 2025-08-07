@@ -84,58 +84,7 @@ Model `.jsonl` formatında veri bekler. Her satır bir cümleyi temsil eder.
 3. **Tokenizasyon:** BERT tokenizer ile alt kelimelere ayrılır ve etiketler hizalanır.
 4. **Maskeleme:** `O` etiketli ve düşük güvenli tahminler (`bio_threshold` altında) `-100` ile maskelenir.
 
----
-
-## ⚙️ Kurulum ve Kullanım
-
-### 1. Projeyi Klonlayın
-
-```bash
-git clone https://github.com/kullanici/proje-adi.git
-cd proje-adi
-```
-
-### 2. Gerekli Kütüphaneleri Yükleyin
-
-```bash
-pip install torch pandas numpy transformers scikit-learn torch-optimizer
-```
-
-> Not: `requirements.txt` dosyası kullanmanız önerilir.
-
-### 3. Veri Setini Hazırlayın
-
-Veri setinizi yukarıda açıklanan `.jsonl` formatında hazırlayın. `main()` fonksiyonu içinde dosya yolunu aşağıdaki şekilde düzenleyin:
-
-```python
-full_data = load_dataset_from_json(
-    "path/to/your/dataset.jsonl",
-    config["tokens_col"],
-    config["tags_col"],
-    entity_group_map=entity_group_map
-)
-```
-
-### 4. Yapılandırmayı Düzenleyin
-
-```python
-config = {
-    "model_name": "dbmdz/bert-base-turkish-128k-cased",
-    "max_length": 128,
-    "batch_size": 16,
-    "learning_rate": 3e-5,
-    "num_epochs": 10,
-    ...
-}
-```
-
-### 5. Eğitimi Başlatın
-
-```bash
-python ner_trainer.py
-```
-
----
+--
 
 ## 📊 Değerlendirme
 
