@@ -84,7 +84,7 @@ Model `.jsonl` formatında veri bekler. Her satır bir cümleyi temsil eder.
 3. **Tokenizasyon:** BERT tokenizer ile alt kelimelere ayrılır ve etiketler hizalanır.
 4. **Maskeleme:** `O` etiketli ve düşük güvenli tahminler (`bio_threshold` altında) `-100` ile maskelenir.
 
---
+---
 
 ## 📊 Değerlendirme
 
